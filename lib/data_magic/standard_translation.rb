@@ -144,7 +144,7 @@ module DataMagic
     # return random words - default is 3 words
     #
     def words(number = 3)
-      Faker::Lorem.words(number).join(' ')
+      Faker::Lorem.words(number: number).join(' ')
     end
     alias_method :dm_words, :words
 
@@ -152,7 +152,7 @@ module DataMagic
     # return a random sentence - default minimum word count is 4
     #
     def sentence(min_word_count = 4)
-      Faker::Lorem.sentence(min_word_count)
+      Faker::Lorem.sentence(word_count: min_word_count)
     end
     alias_method :dm_sentence, :sentence
 
@@ -160,7 +160,7 @@ module DataMagic
     # return random sentences - default is 3 sentences
     #
     def sentences(sentence_count = 3)
-      Faker::Lorem.sentences(sentence_count).join(' ')
+      Faker::Lorem.sentences(number: sentence_count).join(' ')
     end
     alias_method :dm_sentences, :sentences
 
@@ -168,7 +168,7 @@ module DataMagic
     # return random paragraphs - default is 3 paragraphs
     #
     def paragraphs(paragraph_count = 3)
-      Faker::Lorem.paragraphs(paragraph_count).join('\n\n')
+      Faker::Lorem.paragraphs(number: paragraph_count).join('\n\n')
     end
     alias_method :dm_paragraphs, :paragraphs
 
