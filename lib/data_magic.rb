@@ -6,7 +6,7 @@ require 'data_magic/translation'
 require 'data_magic/date_translation'
 require 'data_magic/standard_translation'
 require 'yml_reader'
-require 'faker'
+require 'ffaker'
 
 module DataMagic
   extend YmlReader
@@ -15,11 +15,11 @@ module DataMagic
 
   attr_reader :parent
 
-  I18n.enforce_available_locales = false if I18n.respond_to? :enforce_available_locales
+  # I18n.enforce_available_locales = false if I18n.respond_to? :enforce_available_locales
 
-  def self.locale=(value)
-    Faker::Config.locale = value
-  end
+  # def self.locale=(value)
+  #   FFaker::Config.locale = value
+  # end
 
   def self.included(cls)
     @parent = cls

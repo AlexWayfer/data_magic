@@ -7,7 +7,7 @@ module DataMagic
     # return a random name (first and last)
     #
     def full_name
-      Faker::Name.name
+      FFaker::Name.name
     end
     alias_method :dm_full_name, :full_name
 
@@ -15,7 +15,7 @@ module DataMagic
     # return a random first name
     #
     def first_name
-      Faker::Name.first_name
+      FFaker::Name.first_name
     end
     alias_method :dm_first_name, :first_name
 
@@ -23,7 +23,7 @@ module DataMagic
     # return a random last name
     #
     def last_name
-      Faker::Name.last_name
+      FFaker::Name.last_name
     end
     alias_method :dm_last_name, :last_name
 
@@ -31,7 +31,7 @@ module DataMagic
     # return a random name prefix
     #
     def name_prefix
-      Faker::Name.prefix
+      FFaker::Name.prefix
     end
     alias_method :dm_name_prefix, :name_prefix
 
@@ -39,7 +39,7 @@ module DataMagic
     # return a random name suffix
     #
     def name_suffix
-      Faker::Name.suffix
+      FFaker::Name.suffix
     end
     alias_method :dm_name_suffix, :name_suffix
 
@@ -47,7 +47,7 @@ module DataMagic
     # return a random title
     #
     def title
-      Faker::Name.title
+      FFaker::Name.title
     end
     alias_method :dm_title, :title
 
@@ -55,7 +55,7 @@ module DataMagic
     # return a random street address
     #
     def street_address(include_secondary=false)
-      Faker::Address.street_address(include_secondary)
+      FFaker::Address.street_address(include_secondary)
     end
     alias_method :dm_street_address, :street_address
 
@@ -63,7 +63,7 @@ module DataMagic
     # return a random secondary address
     #
     def secondary_address
-      Faker::Address.secondary_address
+      FFaker::Address.secondary_address
     end
     alias_method :dm_secondary_address, :secondary_address
 
@@ -71,7 +71,7 @@ module DataMagic
     # return a random city
     #
     def city
-      Faker::Address.city
+      FFaker::Address.city
     end
     alias_method :dm_city, :city
 
@@ -79,7 +79,7 @@ module DataMagic
     # return a random state
     #
     def state
-      Faker::Address.state
+      FFaker::Address.state
     end
     alias_method :dm_state, :state
 
@@ -87,7 +87,7 @@ module DataMagic
     # return a random state abbreviation
     #
     def state_abbr
-      Faker::Address.state_abbr
+      FFaker::Address.state_abbr
     end
     alias_method :dm_state_abbr, :state_abbr
 
@@ -95,7 +95,7 @@ module DataMagic
     # return a random 5 or 9 digit zip code
     #
     def zip_code
-      Faker::Address.zip
+      FFaker::Address.zip
     end
     alias_method :dm_zip_code, :zip_code
 
@@ -103,7 +103,7 @@ module DataMagic
     # return a random country
     #
     def country
-      Faker::Address.country
+      FFaker::Address.country
     end
     alias_method :dm_country, :country
 
@@ -112,7 +112,7 @@ module DataMagic
     # return a random company name
     #
     def company_name
-      Faker::Company.name
+      FFaker::Company.name
     end
     alias_method :dm_company_name, :company_name
 
@@ -120,7 +120,7 @@ module DataMagic
     # return a random catch phrase
     #
     def catch_phrase
-      Faker::Company.catch_phrase
+      FFaker::Company.catch_phrase
     end
     alias_method :dm_catch_phrase, :catch_phrase
 
@@ -128,7 +128,7 @@ module DataMagic
     # return a credit card number
     #
     def credit_card_number
-      Faker::Business.credit_card_number
+      FFaker::Bank.card_number
     end
     alias_method :dm_credit_card_number, :credit_card_number
 
@@ -136,15 +136,15 @@ module DataMagic
     # return a credit card type
     #
     def credit_card_type
-      Faker::Business.credit_card_type
+      FFaker::Bank.card_type
     end
     alias_method :dm_credit_card_type, :credit_card_type
-    
+
     #
     # return random words - default is 3 words
     #
     def words(number = 3)
-      Faker::Lorem.words(number: number).join(' ')
+      FFaker::Lorem.words(number).join(' ')
     end
     alias_method :dm_words, :words
 
@@ -152,7 +152,7 @@ module DataMagic
     # return a random sentence - default minimum word count is 4
     #
     def sentence(min_word_count = 4)
-      Faker::Lorem.sentence(word_count: min_word_count)
+      FFaker::Lorem.sentence(min_word_count)
     end
     alias_method :dm_sentence, :sentence
 
@@ -160,7 +160,7 @@ module DataMagic
     # return random sentences - default is 3 sentences
     #
     def sentences(sentence_count = 3)
-      Faker::Lorem.sentences(number: sentence_count).join(' ')
+      FFaker::Lorem.sentences(sentence_count).join(' ')
     end
     alias_method :dm_sentences, :sentences
 
@@ -168,7 +168,7 @@ module DataMagic
     # return random paragraphs - default is 3 paragraphs
     #
     def paragraphs(paragraph_count = 3)
-      Faker::Lorem.paragraphs(number: paragraph_count).join('\n\n')
+      FFaker::Lorem.paragraphs(paragraph_count).join('\n\n')
     end
     alias_method :dm_paragraphs, :paragraphs
 
@@ -176,7 +176,7 @@ module DataMagic
     # return random characters - default is 255 characters
     #
     def characters(character_count = 255)
-      Faker::Lorem.characters(character_count)
+      FFaker::Lorem.characters(character_count)
     end
     alias_method :dm_characters, :characters
 
@@ -184,7 +184,7 @@ module DataMagic
     # return a random email address
     #
     def email_address(name=nil)
-      Faker::Internet.email(name)
+      FFaker::Internet.email(name)
     end
     alias_method :dm_email_address, :email_address
 
@@ -192,7 +192,7 @@ module DataMagic
     # return a random domain name
     #
     def domain_name
-      Faker::Internet.domain_name
+      FFaker::Internet.domain_name
     end
     alias_method :dm_domain_name, :domain_name
 
@@ -200,7 +200,7 @@ module DataMagic
     # return a random url
     #
     def url
-      Faker::Internet.url
+      FFaker::Internet.url
     end
     alias_method :dm_url, :url
 
@@ -208,7 +208,7 @@ module DataMagic
     # return a random user name
     #
     def user_name
-      Faker::Internet.user_name
+      FFaker::Internet.user_name
     end
     alias_method :dm_user_name, :user_name
 
@@ -216,7 +216,7 @@ module DataMagic
     # return a random phone number
     #
     def phone_number
-      value = Faker::PhoneNumber.phone_number
+      value = FFaker::PhoneNumber.phone_number
       remove_extension(value)
     end
     alias_method :dm_phone_number, :phone_number
@@ -225,7 +225,7 @@ module DataMagic
     # return a random cell number
     #
     def cell_phone
-      value = Faker::PhoneNumber.cell_phone
+      value = FFaker::PhoneNumber.cell_phone
       remove_extension(value)
     end
     alias_method :dm_cell_phone, :cell_phone

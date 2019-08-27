@@ -49,31 +49,31 @@ describe "DataMagic translations" do
 
     context "translating random names" do
       it "should add a name" do
-        expect(Faker::Name).to receive(:name).and_return('Joseph')
+        expect(FFaker::Name).to receive(:name).and_return('Joseph')
         set_field_value '~full_name'
         expect(example.data_for('key')).to have_field_value 'Joseph'
       end
 
       it "should add first name" do
-        expect(Faker::Name).to receive(:first_name).and_return('Sam')
+        expect(FFaker::Name).to receive(:first_name).and_return('Sam')
         set_field_value '~first_name'
         expect(example.data_for('key')).to have_field_value 'Sam'
       end
 
       it "should add last name" do
-        expect(Faker::Name).to receive(:last_name).and_return('Smith')
+        expect(FFaker::Name).to receive(:last_name).and_return('Smith')
         set_field_value '~last_name'
         expect(example.data_for('key')).to have_field_value 'Smith'
       end
 
       it "should add name prefix" do
-        expect(Faker::Name).to receive(:prefix).and_return("Mr")
+        expect(FFaker::Name).to receive(:prefix).and_return("Mr")
         set_field_value '~name_prefix'
         expect(example.data_for('key')).to have_field_value 'Mr'
       end
 
       it "should add name suffix" do
-        expect(Faker::Name).to receive(:suffix).and_return('Jr')
+        expect(FFaker::Name).to receive(:suffix).and_return('Jr')
         set_field_value '~name_suffix'
         expect(example.data_for('key')).to have_field_value 'Jr'
       end
@@ -81,43 +81,43 @@ describe "DataMagic translations" do
 
     context "translating random addresses" do
       it "should add a street address" do
-        expect(Faker::Address).to receive(:street_address).and_return("123 Main")
+        expect(FFaker::Address).to receive(:street_address).and_return("123 Main")
         set_field_value '~street_address'
         expect(example.data_for('key')).to have_field_value '123 Main'
       end
 
       it "should add a city" do
-        expect(Faker::Address).to receive(:city).and_return('Cleveland')
+        expect(FFaker::Address).to receive(:city).and_return('Cleveland')
         set_field_value '~city'
         expect(example.data_for('key')).to have_field_value 'Cleveland'
       end
 
       it "should add a state" do
-        expect(Faker::Address).to receive(:state).and_return('Ohio')
+        expect(FFaker::Address).to receive(:state).and_return('Ohio')
         set_field_value '~state'
         expect(example.data_for('key')).to have_field_value 'Ohio'
       end
 
       it "should add a state abbreviation" do
-        expect(Faker::Address).to receive(:state_abbr).and_return('OH')
+        expect(FFaker::Address).to receive(:state_abbr).and_return('OH')
         set_field_value '~state_abbr'
         expect(example.data_for('key')).to have_field_value 'OH'
       end
 
       it "should add a zip code" do
-        expect(Faker::Address).to receive(:zip).and_return('11111')
+        expect(FFaker::Address).to receive(:zip).and_return('11111')
         set_field_value '~zip_code'
         expect(example.data_for('key')).to have_field_value '11111'
       end
 
       it "should add a country" do
-        expect(Faker::Address).to receive(:country).and_return("United States")
+        expect(FFaker::Address).to receive(:country).and_return("United States")
         set_field_value '~country'
         expect(example.data_for('key')).to have_field_value 'United States'
       end
 
       it "should add a secondary address" do
-        expect(Faker::Address).to receive(:secondary_address).and_return('2nd floor')
+        expect(FFaker::Address).to receive(:secondary_address).and_return('2nd floor')
         set_field_value '~secondary_address'
         expect(example.data_for('key')).to have_field_value '2nd floor'
       end
@@ -125,7 +125,7 @@ describe "DataMagic translations" do
 
     context "translating company names" do
       it "should add a company name" do
-        expect(Faker::Company).to receive(:name).and_return('LeanDog')
+        expect(FFaker::Company).to receive(:name).and_return('LeanDog')
         set_field_value '~company_name'
         expect(example.data_for('key')).to have_field_value 'LeanDog'
       end
@@ -133,13 +133,13 @@ describe "DataMagic translations" do
 
     context "translating business" do
       it "should add a credit card number" do
-        expect(Faker::Business).to receive(:credit_card_number).and_return('123')
+        expect(FFaker::Bank).to receive(:card_number).and_return('123')
         set_field_value '~credit_card_number'
         expect(example.data_for('key')).to have_field_value '123'
       end
 
       it "should add credit card type" do
-        expect(Faker::Business).to receive(:credit_card_type).
+        expect(FFaker::Bank).to receive(:card_type).
                    and_return('visa')
         set_field_value '~credit_card_type'
         expect(example.data_for('key')).to have_field_value 'visa'
@@ -148,19 +148,19 @@ describe "DataMagic translations" do
 
     context "translating internet names" do
       it "should add an email address" do
-        expect(Faker::Internet).to receive(:email).and_return('buddy@example.com')
+        expect(FFaker::Internet).to receive(:email).and_return('buddy@example.com')
         set_field_value '~email_address'
         expect(example.data_for('key')).to have_field_value 'buddy@example.com'
       end
 
       it "should add a domain name" do
-        expect(Faker::Internet).to receive(:domain_name).and_return("google.com")
+        expect(FFaker::Internet).to receive(:domain_name).and_return("google.com")
         set_field_value '~domain_name'
         expect(example.data_for('key')).to have_field_value 'google.com'
       end
 
       it "should add a user name" do
-        expect(Faker::Internet).to receive(:user_name).and_return('very_cheezy')
+        expect(FFaker::Internet).to receive(:user_name).and_return('very_cheezy')
         set_field_value '~user_name'
         expect(example.data_for('key')).to have_field_value 'very_cheezy'
       end
@@ -168,7 +168,7 @@ describe "DataMagic translations" do
 
     context "translating phone numbers" do
       it "shold add a phone number" do
-        expect(Faker::PhoneNumber).to receive(:phone_number).and_return('555-555-5555')
+        expect(FFaker::PhoneNumber).to receive(:phone_number).and_return('555-555-5555')
         set_field_value '~phone_number'
         expect(example.data_for('key')).to have_field_value '555-555-5555'
       end
@@ -176,13 +176,13 @@ describe "DataMagic translations" do
 
     context "translating random phrases" do
       it "should add a catch phrase" do
-        expect(Faker::Company).to receive(:catch_phrase).and_return('Ruby is cool')
+        expect(FFaker::Company).to receive(:catch_phrase).and_return('Ruby is cool')
         set_field_value '~catch_phrase'
         expect(example.data_for('key')).to have_field_value 'Ruby is cool'
       end
 
       it "should add random words" do
-        expect(Faker::Lorem).to receive(:words).and_return(['random', 'words'])
+        expect(FFaker::Lorem).to receive(:words).and_return(['random', 'words'])
         set_field_value '~words'
         expect(example.data_for('key')).to have_field_value 'random words'
       end
@@ -198,7 +198,7 @@ describe "DataMagic translations" do
       end
 
       it "should add a random sentence" do
-        expect(Faker::Lorem).to receive(:sentence).and_return('a sentence')
+        expect(FFaker::Lorem).to receive(:sentence).and_return('a sentence')
         set_field_value '~sentence'
         expect(example.data_for('key')).to have_field_value 'a sentence'
       end
@@ -214,7 +214,7 @@ describe "DataMagic translations" do
       end
 
       it "should add sentences" do
-        expect(Faker::Lorem).to receive(:sentences).and_return(['this is sentences'])
+        expect(FFaker::Lorem).to receive(:sentences).and_return(['this is sentences'])
         set_field_value '~sentences'
         expect(example.data_for('key')).to have_field_value 'this is sentences'
       end
@@ -230,7 +230,7 @@ describe "DataMagic translations" do
       end
 
       it "should add a paragraphs" do
-        expect(Faker::Lorem).to receive(:paragraphs).and_return(['this is a paragraph'])
+        expect(FFaker::Lorem).to receive(:paragraphs).and_return(['this is a paragraph'])
         set_field_value '~paragraphs'
         expect(example.data_for('key')).to have_field_value 'this is a paragraph'
       end
@@ -246,7 +246,7 @@ describe "DataMagic translations" do
       end
 
       it "should add characters" do
-        expect(Faker::Lorem).to receive(:characters).and_return('abcdefg')
+        expect(FFaker::Lorem).to receive(:characters).and_return('abcdefg')
         set_field_value '~characters'
         expect(example.data_for('key')).to have_field_value 'abcdefg'
       end

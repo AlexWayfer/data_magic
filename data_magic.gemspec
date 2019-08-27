@@ -19,7 +19,7 @@ Gem::Specification.new do |gem|
 
   gem.required_ruby_version = '>= 2.2'
 
-  gem.add_dependency 'faker', '~> 2.1'
+  gem.add_dependency 'ffaker', '~> 2.1'
   gem.add_dependency 'yml_reader', '>= 0.6'
 
   gem.add_development_dependency 'rspec', '>= 2.12.0'
