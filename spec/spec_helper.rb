@@ -10,6 +10,7 @@ if ENV['coverage']
 end
 
 require 'rspec'
+require 'pry-byebug'
 
 require 'data_magic'
 
