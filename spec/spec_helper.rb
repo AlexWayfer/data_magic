@@ -12,7 +12,7 @@ end
 require 'rspec'
 require 'pry-byebug'
 
-require 'data_magic'
+require_relative '../lib/data_magic'
 
 RSpec::Matchers.define :have_field_value do |expected|
   supports_block_expectations
